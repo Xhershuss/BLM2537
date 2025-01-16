@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gourmet's Guide</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+<button class="to-main-button" onclick="location.href='index.html'"></button>
+<p class = 'title'>Gourmet's Guide</p>
+    
+
+<div class ="dark-frame"></div>
+
+
+
+
+<div class="foods">
+    <h1 class="foods-main-title">Yemekler</h1>
+    <div class="foods-selection">
+        
+        <button class="topMenuButtons foods-selection-button" onclick="filterFoods('starters',this)">Başlangıçlar</button>
+        
+        
+        <button class="topMenuButtons foods-selection-button" onclick="filterFoods('mains',this)">Ana Yemekler</button>
+        <button class="topMenuButtons foods-selection-button" onclick="filterFoods('desserts',this)">Tatlılar</button>
+    </div>
+
+
+    <div class="foods-list">
+       <!--starters,mains,desserts-->
+        <a href="template/food-template.html?id=1" style="text-decoration:none;">
+            <div class="foods-item mains">
+                <img src="images/food1.jpg" alt="Yemek 1" class="foods-image">
+                <h3 class="foods-title">Chicken and Shrimp Laksa</h3>
+                <p class="foods-desp">Chicken and Shrimp Laksa, Güneydoğu Asya mutfağından zengin, aromatik bir noodle çorbasıdır. Hindistan cevizi sütü, baharatlar, tavuk, karides ve taze otlarla hazırlanan bu yemek, hem doyurucu hem de lezzetlidir.</p>
+            </div>
+        </a>
+        
+        <a href="template/food-template.html?id=2  " style="text-decoration:none;">
+            <div class="foods-item starters">
+                <img src="images/food2.jpg" alt="Yemek 2" class="foods-image">
+                <h3 class="foods-title">Creamy Mashed Potato Soup with Dashi</h3>
+                <p class="foods-desp">Shota Nakajima'nın Creamy Mashed Potato Soup with Dashi tarifi, yumuşacık patates çorbasının Japon dashi ile zenginleştirilmiş, derin ve umami dolu bir lezzet sunar.</p>
+            </div>
+         </a>
+        
+
+      
+        <a href="template/food-template.html?id=3  " style="text-decoration:none;">
+            <div class="foods-item mains">
+                <img src="images/food3.jpg" alt="Yemek 3" class="foods-image">
+                <h3 class="foods-title">Çilekli Kuzu İncik</h3>
+                <p class="foods-desp">Etin zengin lezzetini meyvemsi bir tatla buluşturan özgün bir tariftir. Kuzu incik, uzun süre pişirilerek yumuşak ve sulu hale getirilir,üzerine taze çilek sosu eklenerek tatlı ve tuzlunun mükemmel uyumu sağlanır.</p>
+            </div>
+         </a>
+        
+         <a href="template/food-template.html?id=4" style="text-decoration:none;">
+            <div class="foods-item mains">
+                <img src="images/food4.jpg" alt="Yemek 4" class="foods-image" >
+                <h3 class="foods-title">Monkfish Piccata</h3>
+                <p class="foods-desp">Monkfish Piccata, narin dokulu keşiş balığının tereyağı, limon suyu ve kapari ile pişirildiği, hafif ve lezzet dolu bir İtalyan yemeğidir. Zarif aromalarıyla deniz ürünleri severler için mükemmel bir seçenektir.</p>
+            </div>
+        </a>
+        
+         
+        
+       
+         <a href="template/food-template.html?id=5  " style="text-decoration:none;">
+            <div class="foods-item desserts">
+                <img src="images/food5.jpg" alt="Yemek 5" class="foods-image">
+                <h3 class="foods-title">Hong Kong Milk Tea Tiramisu</h3>
+                <p class="foods-desp">Melissa King's Hong Kong Milk Tea Tiramisu tarifi, klasik tiramisuyu, Hong Kong'un ünlü sütlü çayıyla harmanlayarak tatlıya zengin, kremsi ve özgün bir lezzet katıyor.</p>
+            </div>
+         </a>
+        
+       
+         
+        
+        
+
+        <!-- YEMEK EKLEEEEEEE-->
+    </div>
+</div>
+
+
+<script src="scripts/scripts.js"></script>
+
+</body>
+
+
+</html>

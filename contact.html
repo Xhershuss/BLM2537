@@ -1,0 +1,71 @@
+
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Gourmet's Guide</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+<button class="to-main-button" onclick="location.href='index.html'"></button>
+<p class="title">Gourmet's Guide</p>
+
+<button class="pre-contacts-button" onclick="location.href='php/view_contact.php'">Tüm Yorumlar</button>
+
+
+<div class="dark-frame"></div>
+
+<div class="contact-wrapper">
+    <div class="contact-title-box">
+        <h1 class="contact-title">Yorum Yapın</h1>
+    </div>
+    <div class="contact-form-container">
+        <form id="contact-form" action="php/save_contact.php" method="POST" class="contact-form">
+            <div class="contact-inputs">
+                <input type="text" name="name" class="contact-input" placeholder="Adınız" required>
+                <input type="email" name="email" class="contact-input" placeholder="E-posta Adresiniz" required>
+                <textarea name="description" class="contact-input" placeholder="Mesajınızı Buraya Yazın" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Gönder</button>
+        </form>
+    </div>
+    <div class="contact-info">
+        <h2 class="contact-info-title">İletişim Bilgilerimiz</h2>
+        <p><strong>Telefon:</strong> +90 123 456 78 90</p>
+        <p><strong>Email:</strong> GourmetGuide@zartzurt.com</p>
+        <p><strong>Adres:</strong> Bahçelievler Mah. Oğuzhan Asiltürk Cad. no:15 daire:999 Çankaya/Ankara</p>
+    </div>
+</div>
+
+<script>
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault(); 
+
+      
+        var formData = $(this).serialize(); 
+
+
+        $.ajax({
+            type: 'POST',
+            url: 'php/save_contact.php',
+            data: formData,
+            success: function(response) {
+               
+                alert('Gönderiniz başarıyla alındı!');
+            
+                $('#contact-form')[0].reset();
+            },
+            error: function() {
+
+                alert('Form gönderilirken bir hata oluştu.');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

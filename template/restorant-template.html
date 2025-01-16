@@ -1,0 +1,97 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Yemek Detayları</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+    <button class="to-main-button" onclick="location.href='../index.html'"></button>
+    <p class = 'title'>Gourmet's Guide</p>
+    <a href="../restorants.html"><img src="../images/backArrow.png" class="template-back-arrow"></a>
+    <div class ="dark-frame"></div>
+
+
+    <div class="template-image-container">
+        <img class="template-image">
+
+        
+        <div class="template-map-container" style="background:#ffffff;webkit-border-radius:20px;-moz-border-radius: 20px;border-radius: 20px;margin:0 auto;overflow:hidden;">
+            <iframe 
+                class="template-map" 
+                width= "100%"
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                
+                
+                referrerpolicy="no-referrer-when-downgrade">    
+            </iframe>
+        </div>
+
+
+        </a>
+    </div>
+
+    <div class="wrapper">
+        <div class="template-title-box"></div>
+        <div class="template-title"></div>
+    </div>
+
+    <p class="template-description"></p><br>
+
+
+
+<script>
+
+const id = new URLSearchParams(window.location.search).get("id");//?id=1; => "1"
+
+const foods = {
+        "1": {
+            "title": "Turk",
+            "image": "../images/restorant1.jpg",
+
+            "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.4872021025635!2d28.975192375901102!3d41.05834187134355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7f6b0eaac85%3A0x99db1127dde8dc58!2sTURK%20FATIH%20TUTAK!5e0!3m2!1str!2str!4v1734983852541!5m2!1str!2str",
+            "description": "İstanbul'un Türk Fatih Tutak restoranı, Türk mutfağını modern bir yorumla sunan, benzersiz bir gastronomik deneyim arayanlar için ideal bir mekandır. Şef Fatih Tutak, geleneksel Türk yemeklerini yenilikçi bir bakış açısıyla sunarak, her bir tabakta Türk mutfağının zenginliğini ve kültürel çeşitliliğini ortaya koyar. Türk restoranı, Türk mutfağının en iyi örneklerini, yerel malzemeler ve tekniklerle modernize ederek, misafirlerine hem tanıdık hem de yeni bir deneyim sunar. Restoran, Türk yemeklerinin klasik tariflerini yaratıcı bir şekilde yeniden yorumlar. Özellikle, tutkulu bir şekilde Türk mutfağının geleneksel tatlarını modern bir tarzda sunmak isteyen Fatih Tutak, her yemeği zarif bir şekilde hazırlayarak, lezzet ve sunum arasında mükemmel bir denge kurar. Restoranın menüsünde, Türk mutfağının en bilinen yemeklerinin yanı sıra, şefin özel dokunuşlarıyla yenilikçi tabaklar da bulunur. Türk Fatih Tutak, sadece bir restoran olmanın ötesinde, yemekleriyle misafirlerine bir kültür yolculuğu sunar. Zengin aromalar, taze ve kaliteli malzemelerle hazırlanmış yemekler, hem geleneksel hem de çağdaş tekniklerle bir araya gelir. Restoranın iç tasarımı da misafirlerine sıcak ve davetkar bir atmosfer sunar; hem modern hem de geleneksel ögeler bir arada harmanlanır. Bu restoran, Türk mutfağını keşfetmek isteyenler için, gastronominin sınırlarını zorlayan bir deneyim vadeder."
+        },
+        "2": {
+            "title": "Alchemist",
+            "image": "../images/restorant2.jpg",
+      
+            "map" : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.7109096555387!2d12.611114576771678!3d55.69401367306251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465252f05656b119%3A0xae8379fe9221de7!2sAlchemist!5e0!3m2!1str!2str!4v1734984068518!5m2!1str!2str",
+            "description": "Kopenhag'da bulunan Alchemist, gastronomiyi sadece bir yemek deneyimi olarak değil, aynı zamanda bir sanat formu olarak yeniden tanımlar. Şef Rasmus Munk tarafından yönetilen bu restoran, modern yemekleri sanatsal bir bakış açısıyla sunarak, yemeklerin her aşamasını izleyen bir hikaye haline getirir. Alchemist, bir restorandan beklediğinizin çok daha fazlasını sunar: Sadece lezzetli yemekler değil, aynı zamanda bir deneyim, duyulara hitap eden bir şov. Restoran, misafirlerini bir mutfak sahnesine davet eder. Her bir tabak, hem görsel hem de tat açısından özenle hazırlanır. Yemekler, modern teknolojiler ve moleküler gastronomi teknikleri kullanılarak yaratılır, bu sayede yemeği sadece tatmakla kalmaz, aynı zamanda bir sanat eseri olarak deneyimlersiniz. Alchemist'in menüsü, sıklıkla değişen ve şefin yaratıcılığını yansıtan bir yapıya sahiptir. Ayrıca, restoranın iç mekan tasarımı da bu deneyimi tamamlar; lüks ve çağdaş detaylarla bezeli, görsel olarak büyüleyici bir atmosfer sunar. Misafirler, her bir tabakta bir hikaye bulur ve Alchemist, gastronomiyi görsel sanattan psikolojik bir yolculuğa dönüştürür. Alchemist'in sunduğu deneyim, yemeğin ötesinde bir şeydir. Bu restoranda yemek, eğlence, sanat ve teknoloji bir arada sunulur. Yüksek kaliteli yemekler ve son derece yaratıcı bir yaklaşım sayesinde, Alchemist, sadece Danimarka'nın değil, tüm dünyanın gastronomi haritasında önemli bir yer edinmiştir."
+        },
+        "3": {
+            "title": "Asador Etxebarri",
+            "image": "../images/restorant3.jpg",
+            "map" : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.4595217763795!2d-2.601044023988887!3d43.11587207113275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fd2f2e829037f%3A0x2a92df5d5d965416!2sAsador%20Etxebarri!5e0!3m2!1str!2str!4v1734984163723!5m2!1str!2str",
+            "description": "İspanya'nın Axpe köyünde yer alan Asador Etxebarri, geleneksel İspanyol ızgaracılık tekniklerini modern bir bakış açısıyla harmanlayan, etkileyici bir restoran deneyimi sunuyor. Victor Arguinzoniz tarafından yönetilen bu restoran, odun ateşinin gücünü kullanarak, lezzetleri doğallıkları ve basitlikleriyle en yüksek seviyeye taşır. Etxebarri, yemek pişirme konusunda minimal bir yaklaşım benimserken, kullanılan teknikler ve malzemelerle büyük bir etki yaratır. Restoranın öne çıkan özelliği, geleneksel İspanyol mangalı olan asadorda yemek pişirme yöntemidir. Etxebarri'nin mutfağında, her malzeme odun ateşiyle pişirilir ve bu, yemeklerin doğal tatlarının daha belirgin hale gelmesini sağlar. Mutfakta kullanılan her bir malzeme, yerel ve organik olup, bölgenin zengin topraklarından gelen taze ve kaliteli malzemelerle hazırlanır. Örneğin, etler ve deniz ürünleri, odun ateşinde pişirilerek eşsiz bir tat kazanır. Yemekler, basit ama lezzetli malzemelerle yapılan, zarif ve dikkatlice oluşturulmuş tabaklardan oluşur. Etxebarri'nin başarısının anahtarı, mutfak tekniklerinin yanı sıra, şefin malzemeye duyduğu saygıdır. Her yemek, sabırla ve özenle hazırlanır, lezzetlerin birbirini tamamlaması sağlanır. Asador Etxebarri, gastronomi dünyasında büyük takdir gören, yenilikçi ve sofistike bir yemek deneyimi sunar. Sadece yemek değil, aynı zamanda mutfak kültürünün ve bölgenin geleneklerinin bir kutlamasıdır."
+        },
+        "4": {
+            "title": "Quique Dacosta",
+            "image": "../images/restorant4.jpg",
+            "map" : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.070544947729!2d0.0826163757880935!3d38.85374217173333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129e1b1950b35853%3A0xc60b3a7380b57f7e!2sRestaurant%20Quique%20Dacosta!5e0!3m2!1str!2str!4v1734984219439!5m2!1str!2str",
+            "description": "İspanya'nın Denia kasabasında bulunan Restaurant Quique Dacosta, Quique Dacosta tarafından yönetilen, çağdaş İspanyol mutfağını modernize eden bir gastronomi cennetidir. Bu restoran, moleküler gastronomi ve geleneksel İspanyol tatlarını bir araya getirerek, misafirlerine eşsiz bir yemek deneyimi sunar. Restoran, sanatı ve yemekleri birleştiren, her tabakta farklı bir hikaye anlatan bir yerdir. Quique Dacosta'nın mutfağı, gastronominin sınırlarını zorlamakla kalmaz, aynı zamanda yenilikçi tekniklerle hazırlanan yemeklerle misafirlere farklı bir bakış açısı sunar. Menüdeki her yemek, bir gastronomik yolculuktur ve her tabak, bilimsel bir hassasiyetle hazırlanır. Bu restoran, modern İspanyol mutfağının en parlak örneklerinden birini sunar ve moleküler gastronomi tekniklerini, geleneksel İspanyol lezzetleriyle birleştirerek, oldukça yaratıcı bir menü oluşturur. Dacosta'nın yemekleri sadece tat değil, görsel bir deneyim de sunar. Yemeklerin her bir detayı, bir sanat eseri gibi tasarlanmıştır. İleri düzey teknikler kullanılarak hazırlanan yemekler, mükemmel bir şekilde sunulur ve her bir tabak, restoranın sanatsal atmosferine uyum sağlar. Quique Dacosta, sadece yemekleriyle değil, şefin felsefesiyle de tanınır. Şef, her tabakta doğal malzemelerin özünü çıkarırken, yemeklerin tarihsel ve kültürel bağlamını da göz önünde bulundurur."
+        },
+        "5": {
+            "title": "Reale",
+            "image": "../images/restorant5.jpg",
+            "map" : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d637572.0972604629!2d13.650593202814594!3d42.070205937526254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13307a6fd5471c9f%3A0xd7960e0f6a06454a!2sRistorante%20Reale!5e0!3m2!1str!2str!4v1734984287032!5m2!1str!2str",
+            "description": "İtalya'nın Castel di Sangro kasabasında bulunan Ristorante Reale, Niko Romito tarafından yönetilen Michelin yıldızlı bir restorandır. Bu restoran, İtalyan mutfağının sadeliğini ve zarafetini modern tekniklerle birleştirir. Niko Romito'nun yaklaşımı, geleneksel İtalyan yemeklerini minimalist bir şekilde sunmak ve yemeklerin doğallığını ve özünü ortaya koymaktır. Bu restoran, yüksek kaliteli malzemelerle yapılan zarif yemekler sunar ve her bir tabak, sofistike bir gastronomik deneyim sunar. Ristorante Reale, sade ve zarif bir mutfak sunmakla kalmaz, aynı zamanda her tabakta yemeğin özüne sadık kalarak, geleneksel İtalyan lezzetlerini modern bir yorumla misafirlere sunar. Romito'nun mutfağında kullanılan teknikler, geleneksel İtalyan yemeklerinin sınırlarını genişletir ve her bir yemek, doğal malzemelerin en yüksek potansiyeline ulaşmasını sağlar. Restoran, minimalizmi benimseyerek, her bir yemekle sadeliği ve zarafeti ön plana çıkarır. Niko Romito, sadece yemeklerin lezzetini değil, aynı zamanda yemeklerin sunumunu ve deneyimini de düşünerek, misafirlere unutulmaz bir gastronomik yolculuk sunar. Ristorante Reale, sadece bir yemek değil, bir sanat formudur. Bu restoran, gastronomi dünyasında benzersiz bir yere sahip olup, İtalyan mutfağının modern yorumlarıyla dünyadaki en prestijli mutfaklardan biri haline gelmiştir."
+        }
+}
+
+//elementByID nin class versiyonu
+document.querySelector('.template-image').src = foods[id].image;
+
+document.querySelector('.template-title').textContent = foods[id].title;
+document.querySelector('.template-description').textContent = foods[id].description;
+
+document.querySelector('.template-map').src = foods[id].map;
+
+
+
+</script>
+    
+</body>
+</html>

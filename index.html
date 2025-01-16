@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gourmet's Guide</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+<button class="to-main-button" onclick="location.href='index.html'"></button>
+<p class = 'title'>Gourmet's Guide</p>
+
+
+
+
+<div class="topMenu">
+    <button class="topMenuButtons" onclick="location.href='foods.html'"><span>Yemekler</span></button>
+    <button class="topMenuButtons" onclick="location.href='chefs.html'"><span>Şefler</span></button>
+    <button class="topMenuButtons" onclick="location.href='restorants.html'"><span>Restoranlar</span></button>
+    <button class="topMenuButtons" onclick="location.href='contact.html'"><span>Görüşleriniz</span></button>
+</div>
+
+
+
+<div class="search-bar" id="search">
+    <form id="searchForm" onsubmit="return handleSearch(event)">
+        <button type="button" id="dice-button" class="diceButton"><img src="images/d20.png" class="dice"></button>
+        <input type="text" placeholder="İçerik arayın..." class="searchInput" id="search-input">
+        <button type="submit" class="topMenuButtons searchButton"><span>Ara</span></button>
+    </form>
+</div>
+
+<div class="bottomBox"></div>
+
+
+<script src="scripts/scripts.js"></script>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Yemek Detayları</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+
+    <button class="to-main-button" onclick="location.href='../index.html'"></button>
+    <p class = 'title'>Gourmet's Guide</p>
+    <a href="../foods.html"><img src="../images/backArrow.png" class="template-back-arrow"></a>
+    <div class ="dark-frame"></div>
+
+
+    <div class="template-image-container">
+        <img class="template-image">
+        <a class="food-template-chef-link">
+            <img class="food-template-chef-image">
+        </a>
+    </div>
+
+    <div class="wrapper">
+        <div class="template-title-box"></div>
+        <div class="template-title"></div>
+    </div>
+
+    <p class="template-description"></p><br>
+
+
+<script>
+
+const id = new URLSearchParams(window.location.search).get("id");//?id=1; => "1"
+
+const foods = {
+        "1": {
+            "title": "Chicken and Shrimp Laksa",
+            "image": "../images/food1.jpg",
+            "chef": "../images/chef1.jpg",
+            "chef-href" : "chef-template.html?id=1",
+            "description": "Buddha Lo'nun Chicken and Shrimp Laksa yemeği, geleneksel Malezya ve Singapur mutfaklarına ait lezzetli bir Asya çorbasıdır. Laksa, özellikle sıcak ve baharatlı tavuk, karides ve noodle karışımını barındıran, kremamsı ve yoğun bir çorba olarak bilinir. Buddha Lo'nun versiyonu, zengin hindistancevizi sütü bazlı bir çorba, baharatlı ve taze otlar ile harmanlanmış malzemeler içerir. Çorbanın içinde taze karidesler ve ince dilimlenmiş tavuk etleri bulunur. Bu etler, hafifçe sote edilip, derin lezzetler elde etmek için baharatlı bir karışıma batırılır. Noodles genellikle pirinç noodles (örme noodle) ya da buğday noodles kullanılarak hazırlanır. Ayrıca, bol miktarda limon otu, galangal (bir tür zencefil), kafir lime yaprakları ve acı biber gibi malzemelerle tatlandırılır. Laksa'nın sunumu, üzerine taze kişniş, yeşil soğan, kaymaklı yumurta dilimleri ve turşu gibi garnitürlerle yapılır. Hindistancevizi sütü çorbasının kremamsı yapısı, baharatların ve deniz ürünlerinin verdiği zengin lezzetle mükemmel bir denge oluşturur. Buddha Lo'nun bu tarifi, modern dokunuşlarla geleneksel Laksa'yı yeniden şekillendirerek, geleneksel lezzetleri çağdaş bir biçimde sunar. Hem ferahlatıcı hem de doyurucu olan bu yemek, hem Asya mutfağının zenginliğini hem de Batı damak tadını birleştirir."
+        },
+        "2": {
+            "title": "Creamy Mashed Potato Soup with Dashi",
+            "image": "../images/food2.jpg",
+            "chef": "../images/chef2.jpg",
+            "chef-href" : "chef-template.html?id=2",
+            "description": "Shota Nakajima'nın Creamy Mashed Potato Soup with Dashi tarifi, geleneksel patates çorbasını Japon mutfağının özlerinden biri olan dashi ile birleştirerek sıradışı bir lezzet deneyimi sunar. Patates, çorbanın temelini oluşturan ana malzeme olarak, yumuşacık ve kremsi bir kıvama getirilir. Ancak bu klasik tarife farklılık katan, dashi'nin katkısıdır. Japon mutfağının vazgeçilmez bileşeni olan dashi, deniz yosunu, balık veya kuru malzemelerle hazırlanan bir et suyu olup, çorbaya zengin, umami dolu bir derinlik katar. Patatesin doğal yumuşak ve hafif tatlı dokusu, dashi'nin tuzlu ve ferahlatıcı notalarıyla mükemmel bir uyum yakalar. Bu çorba, hem hafif hem de doyurucu bir yemek sunar; geleneksel patates çorbasının bilinen lezzetini bambaşka bir seviyeye taşır. Shota Nakajima, bu tarifle sadece malzemelerin uyumunu değil, aynı zamanda Japon ve Batı mutfağının birleşiminden doğan yeni bir gastronomik anlayışı da keşfeder. Patatesin kremamsı yapısı ve dashi'nin yoğun, karakteristik lezzeti, bu çorbanın her lokmasını unutulmaz kılar. Hem evde yapılan yemeklere Japon dokunuşu eklemek isteyenler hem de farklı tatlar denemek isteyenler için harika bir seçenek olan bu çorba, kesinlikle damaklarda kalıcı bir iz bırakır."
+        },
+        "3": {
+            "title": "Çilekli Kuzu İncik",
+            "image": "../images/food3.jpg",
+            "chef": "../images/chef3.jpg",
+            "chef-href" : "chef-template.html?id=3",
+            "description": "7 Mehmet'in Çilekli Kuzu İncik yemeği, geleneksel Türk mutfağının zenginliğini modern bir dokunuşla sunan özgün bir tariftir. Bu yemek, kuzu etinin yumuşacık ve lezzetli dokusuyla başlar. Kuzu incik, uzun süre düşük ısılarda pişirilerek etin tamamen yumuşaması sağlanır ve etin doğal zengin tadı ortaya çıkar. Ancak bu yemek, yalnızca etin lezzetiyle sınırlı kalmaz; taze çileklerin asidik ve tatlı aromasını etin üzerine ekleyerek tamamen yeni bir tat deneyimi yaratır. Çilek, genellikle tatlılarda kullanılsa da, bu yemekle birlikte tuzlu bir yemekle mükemmel bir uyum içinde kullanılır. Çileklerin doğal asidik yapısı, kuzu etinin ağır tadını dengeleyerek yemeğe hafiflik katar. Ayrıca, çilek sosunun etin üzerine dökülmesiyle elde edilen tatlı-tuzlu zıtlık, damaklarda unutulmaz bir iz bırakır. Yemeğin sunumu da bir o kadar dikkat çekicidir. Çileklerin taze ve canlı renkleri, yemeğe görsel açıdan da zarif bir dokunuş katar. Ayrıca, kuzu etinin yoğun lezzeti ve çilek sosunun ferahlatıcı etkisiyle bu yemek, her bir lokmada zengin bir tat yolculuğu sunar. 7 Mehmet'in Çilekli Kuzu İncik yemeği, geleneksel Türk mutfağına modern bir yorum katarak, alışılmadık ama son derece lezzetli bir deneyim sunar."
+        },
+        "4": {
+            "title": "Monkfish Piccata",
+            "image": "../images/food4.jpg",
+            "chef": "../images/chef4.jpg",
+            "chef-href" : "chef-template.html?id=4",
+            "description": "Tiffani Faison'ın Monkfish Piccata yemeği, İtalyan mutfağından ilham alan, zarif ve lezzetli bir balık yemeğidir. Monkfish (deniz engereği), sert ve etli dokusu sayesinde genellikle tavuk gibi pişirilebilen bir balık türüdür ve bu tarife mükemmel bir şekilde uyum sağlar. Monkfish Piccata, geleneksel İtalyan piccata tarzında, balığın ince dilimlere kesilerek unla kaplanıp tavada kızartılmasından oluşur. Tiffani Faison bu yemeği zengin ve aromatik bir şekilde hazırlamak için, monkhfish dilimlerini zeytinyağında altın rengi olana kadar pişirir. Yemeğin temelini oluşturan 'piccata' sosu, limon suyu, beyaz şarap, kapari ve tereyağı içerir, bu da balığa asidik, hafif ekşimsi ve tuzlu bir lezzet katmaktadır. Sos, balığın üzerine dökülmeden önce, tavada kalan sosun içine, şarap ve limonla birlikte tereyağının erimesiyle yoğun bir kıvam elde edilir. Kapari ise yemeğe ekstra tuzluluk ve özgün bir aroma kazandırır. Yemeğin sunumu, genellikle taze otlar, ince dilimlenmiş limon dilimleri ve bazen bir parça roka ile yapılır. Monkfish Piccata, zengin sosu ve balığın mükemmel pişirilmesiyle hem hafif hem de doyurucu bir tat sunar. Tiffani Faison, bu tarifi, balık severler için ince bir İtalyan klasiği yaratırken, taze ve aromatik bileşenlerle yemeklerine modern bir dokunuş ekler. Yemeğin tamamlayıcı olarak yanında genellikle risotto ya da taze pişirilmiş sebzeler sunulabilir."
+        },
+        "5": {
+            "title": "Hong Kong Milk Tea Tiramisu",
+            "image": "../images/food5.jpg",
+            "chef": "../images/chef5.jpg",
+            "chef-href" : "chef-template.html?id=5",
+            "description": "Melissa King’in Hong Kong Milk Tea Tiramisu tarifi, geleneksel İtalyan tatlısı tiramisuyu benzersiz bir şekilde yeniden yorumluyor. Tiramisu, klasik olarak kahve ve mascarpone peyniri ile yapılan bir tatlıdır, ancak Melissa King, bu geleneksel tarife Hong Kong'un ünlü sütlü çayını (milk tea) ekleyerek tatlıyı Asya mutfağının lezzetleriyle birleştiriyor. Hong Kong milk tea, siyah çay ve yoğun sütle yapılan, kremsi ve hafif tatlı bir içecektir. King, bu çayı tiramisunun içine entegre ederek tatlıya hem derinlik hem de egzotik bir aroma katıyor. Bu tarifi hazırlarken, geleneksel tiramisunun yumuşak yapısını korurken, Hong Kong milk tea’nin hafif acılığı ve sütlü kremamsı tadı, tatlıyı bambaşka bir boyuta taşır. Yumuşak ve kremsi mascarpone peyniri, sütlü çayın zenginliğiyle birleşerek, her bir lokmada tatlı ve hafif baharatlı bir deneyim sunar. Ladyfinger bisküvileri, Hong Kong milk tea’nin sıvısıyla ıslatılarak tatlıya özgün bir doku kazandırılır. Bu modern yorum, sadece lezzet açısından değil, aynı zamanda tatlıya yeni bir görsel cazibe katmaktadır. Melissa King’in Hong Kong Milk Tea Tiramisu tarifi, Asya mutfağından ilham alarak klasik İtalyan tatlısına modern bir dokunuş getirir. Hong Kong’un sütlü çayını, zengin ve kremamsı bir yapıyla birleştirerek, tatlıya derinlik ve taze bir dokunuş katmıştır. Bu tatlı, geleneksel ve modern tatların birleşimini arayanlar için harika bir seçenek olup, her biri tarafından beğenilecek bir lezzet sunar."
+        }
+}
+
+//elementByID nin class versiyonu
+document.querySelector('.template-image').src = foods[id].image;
+document.querySelector('.food-template-chef-image').src = foods[id].chef;
+document.querySelector('.food-template-chef-link').href = foods[id]["chef-href"];
+
+document.querySelector('.template-title').textContent = foods[id].title;
+document.querySelector('.template-description').textContent = foods[id].description;
+
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,104 @@
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chef Detayları</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+    <body>
+
+        <button class="to-main-button" onclick="location.href='../index.html'"></button>
+        <p class = 'title'>Gourmet's Guide</p>
+        <a href="../chefs.html"><img src="../images/backArrow.png" class="template-back-arrow"></a>
+        <div class ="dark-frame"></div>
+
+
+        <img class="template-image">
+
+        <div class="wrapper">
+            <div class="template-title-box"></div>
+            <div class="template-title"></div>
+        </div>
+
+        <p class="template-description"></p><br>
+
+
+        <div class="mini-wrapper">
+            <div class="mini-template-title-box"></div>
+            <div class="mini-template-title">Restoranlarları</div>
+        </div>
+        <p class="template-description template-description-restorant"></p><br>
+
+        <div class="mini-wrapper">
+            <div class="mini-template-title-box"></div>
+            <div class="mini-template-title">İmza Tabakları</div>
+        </div>
+        <p class="template-description template-description-sign-dish"></p><br>
+
+        <div class="mini-wrapper">
+            <div class="mini-template-title-box"></div>
+            <div class="mini-template-title">Kitapları</div>
+        </div>
+        <p class="template-description template-description-book"></p><br>
+
+
+
+    <script>
+
+    const id = new URLSearchParams(window.location.search).get("id");//?id=1; => "1"
+
+    const foods = {
+            "1": {
+                "title": "Buddha Lo",
+                "image": "../images/chef1.jpg",
+                "restorants": "Huso",
+                "signature-dishes" : "Tom Yum Bisque, The Perfect Egg, Kabaklı Tatlı",
+                "books" : "-",
+                "description": "Buddha Lo, Avustralya'nın Port Douglas şehrinde doğup büyümüş bir şef. Yemek yapma tutkusunu, ailesinin işlettiği Çin restoranında geliştirdi. Liseden sonra, Melbourne'deki Le Cordon Bleu'de eğitim aldı ve şehrin en prestijli restoranlarından biri olan Vue de Monde'da çalıştı. Daha sonra kariyerine Londra'daki Gordon Ramsay Restoranı ve New York'taki Eleven Madison Park gibi dünyaca ünlü restoranlarda devam etti. Buddha, geniş bir yelpazede kazandığı deneyimlerle teknik becerilerini ve yaratıcılığını geliştirdi. Top Chef yarışmasında üst üste iki kez şampiyon olan Buddha, bu başarısıyla uluslararası alanda büyük bir tanınırlık kazandı. Teknik mükemmeliyeti, yenilikçi yaklaşımı ve ruh dolu tabaklarıyla dikkat çekiyor. Kariyerindeki bu başarıların temelini, farklı mutfak türlerinde çalışarak kazandığı zengin deneyimlere dayandırıyor."
+            },
+            "2": {
+                "title": "Shota Nakajima",
+                "image": "../images/chef2.jpg",
+                "restorants": "Adana, Taku",
+                "signature-dishes": "Creamy Mashed Potato Soup with Dashi, Karaage, Crispy Salmon Skin Salad",
+                "books" : "-",
+                "description": "Shota Nakajima, Japon mutfağının geleneksel lezzetlerini modern bir biçimde sunarak dünya çapında tanınan bir şeftir. Japonya'nın Osaka şehrinde doğmuş ve erken yaşlardan itibaren mutfakta çalışmaya başlamıştır. Japonya'da aldığı eğitim ve tecrübe, onu geleneksel mutfağın derinliklerine götürürken, Amerika'da geçirdiği yıllar onun mutfak anlayışını daha yaratıcı ve yenilikçi bir hale getirmiştir. Nakajima, Seattle'daki restoranı Adana ile büyük bir çıkış yakalamış, burada Japon malzemelerini kullanarak Batı mutfağıyla harmanlanmış özgün yemekler sunmuştur. Restoranı, hem Japon mutfağının sadelik ve zarafetini hem de Batı mutfağının özgürlük ve yenilikçi ruhunu barındırır. Shota Nakajima, yemeklerinde geleneksel Japon teknikleri ve malzemeleri ile modern yorumları birleştirerek gastronomi dünyasında dikkat çeker. Özellikle dashi (Japon et suyu), umami ve deniz ürünleri gibi Japon mutfağının temel unsurlarını Batı tarzı pişirme yöntemleriyle birleştirir. Bunun yanı sıra, taze ve doğal malzemelere olan tutkusuyla da tanınır. Shota Nakajima'nın tarzı, sadece yemeklere değil, aynı zamanda yemeklerin sunumuna da yansır. Yemeği bir sanat formu olarak gören Nakajima, estetik ve lezzeti birleştirerek misafirlerine görsel ve damak zevki açısından tatmin edici bir deneyim sunar."
+            },
+            "3": {
+                "title": "Mehmet Akdağ",
+                "image": "../images/chef3.jpg",
+                "restorants": "7 Mehmet",
+                "signature-dishes" : "Çilekli Kuzu İncik, Ali Nazik Kebabı, Fırınlanmış Beşamel Soslu Karnabahar",
+                "books" : "-",
+                "description": "7 Mehmet, ünlü Türk şefi ve restoran sahibi Mehmet Akdağ'ın liderliğinde, geleneksel Türk mutfağını modern bir dokunuşla sunan bir restoran zinciridir. Mehmet Akdağ, mutfak kariyerine genç yaşlarda başlamış ve yıllarca hem Türkiye'de hem de yurt dışında çeşitli prestijli restoranlarda çalışarak deneyim kazanmıştır. 7 Mehmet, Akdağ'ın uzun yıllar boyunca geliştirdiği mutfak bilgisi ve yeteneğiyle oluşturduğu bir marka haline gelmiştir. Restoran, özellikle Türk mutfağının geleneksel tariflerini modernize ederek ve Akdeniz'in taze malzemelerini kullanarak dikkat çekmektedir."
+            },
+            "4": {
+                "title": "Tiffani Faison",
+                "image": "../images/chef4.jpg",
+                "restorants": "Sweet Cheeks Q, Tiffani Faison's El Gustavo's, Tiger Mama",
+                "signature-dishes": "Monkfish Piccata, Barbekü ve Smoked Etler, Kızarmış Tavuk ve Waffle",
+                "books" : "-",
+                "description": "Tiffani Faison, 1970 doğumlu olup, mutfağa olan ilgisini genç yaşlarda keşfetmiştir. Boston'da büyüyen Faison, ilk başlarda sanat ve tasarım alanlarına ilgi duymuş, ancak sonrasında mutfağa olan tutkusunun peşinden gitmeye karar vermiştir. Culinary Institute of America'dan mezun olduktan sonra, mutfağındaki yeteneklerini geliştirmek amacıyla birçok prestijli restoran ve otelde çalıştı. Faison, Top Chef adlı yemek yarışmasında kazandığı popülerlikle tanınmıştır. Yarışmadaki performansı, onun yalnızca bir şef olarak değil, aynı zamanda bir televizyon kişiliği olarak da büyük bir takipçi kitlesi kazanmasına yardımcı olmuştur."
+            },
+            "5": {
+                "title": "Melissa King",
+                "image": "../images/chef5.jpg",
+                "restorants": "M. King",
+                "signature-dishes": "Hong Kong Milk Tea Tiramisu, Char Siu Pork Belly, Miso-glazed Black Cod",
+                "books" : "-",
+                "description": "Melissa King, Asyalı-Amerikalı bir şef olarak gastronomi dünyasında kendine sağlam bir yer edinmiştir. Los Angeles doğumlu olan King, Çinli ve Tayvanlı bir aileden gelmektedir. Mutfak kariyerine genç yaşlarda ilgi duymaya başlamış ve çeşitli prestijli restoranlarda çalışarak deneyim kazanmıştır. King, mutfağında geleneksel Asya yemeklerini Batı teknikleriyle harmanlayarak benzersiz bir stil yaratmıştır. Yaratıcılığı ve yenilikçi mutfak anlayışı sayesinde, yemeklerinde hem geleneksel hem de modern öğeleri birleştirerek her zaman farklı lezzetler sunar. Melissa King, şef olarak kariyerinin zirvesinde Michelin yıldızlı restoranlarda çalıştıktan sonra, kendi restoranında ve farklı mutfak projelerinde de adından sıkça sözettirmeye başlamıştır. Yemeklerinde taze malzemeler kullanmaya özen gösteren King, Asya mutfağını Batı'nın sofistike pişirme teknikleriyle birleştirerek, her bir yemeğigörsel ve lezzet açısından çarpıcı hale getirir. Şefin yaratıcı yaklaşımı, gastronomi dünyasında büyük beğeni kazanmıştır.Melissa King aynı zamanda televizyonda da tanınan bir isimdir. Top Chef gibi yemek yarışmalarında birincilik elde etmiş ve bu sayede geniş bir izleyici kitlesineulaşmıştır. King, televizyon dünyasında Asya mutfağını tanıtmanın yanı sıra, geleneksel yemekleri modernize etme yeteneğiyle de dikkat çekmiştir."
+            }
+    }
+
+    //elementByID nin class versiyonu
+    document.querySelector('.template-image').src = foods[id].image;
+    document.querySelector('.template-title').textContent = foods[id].title;
+    document.querySelector('.template-description').textContent = foods[id].description;
+    document.querySelector('.template-description-restorant').textContent = foods[id].restorants;
+    document.querySelector('.template-description-book').textContent = foods[id].books;
+    document.querySelector('.template-description-sign-dish').textContent = foods[id]["signature-dishes"];
+
+
+    </script>
+        
+    </body>
+    </html>

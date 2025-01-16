@@ -1,0 +1,710 @@
+  
+body {
+    background: linear-gradient(to bottom, #000428,#004e92);
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.bottomBox{
+  position: absolute;
+  border: 1px solid #00000075;
+  background:#00000075;
+  left: 0px;
+  bottom: 0px;
+  width: 99.9%;
+  height: 120px;
+  box-shadow: 0 0 30px 7px #000000,0 0 50px 2px #000000b1 inset;  
+}
+
+.title {
+    width: 400px;
+    height: 120px;
+    line-height: 60px; 
+    background: linear-gradient(to bottom, #464646, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 70px;
+    text-align: center;
+    margin: 0 auto; 
+    padding-top: 40px; 
+    padding-bottom: 10px; 
+    text-shadow: 0 0 3px #ffffff, 0 0 7px #ffffff;
+    cursor: pointer;
+}
+
+.to-main-button{
+  position: absolute;
+  width: 400px;
+  height: 120px;
+  top:40;
+  right: 559.600px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+
+.topMenu{
+    width: 60%;
+    height: 5px;
+    border: 7px solid rgba(255, 255, 255, 0.838);
+    border-style: double;
+    box-shadow: 0 0 30px 5px #48abe0,0 0 50px 2px #072a3c inset;  
+    border-radius: 20px;
+    padding: 40px;
+    margin: 70px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;  
+    gap: 3px;
+}
+
+/* postion: relative -> kutu içinde left right bottom top şeklinde gezdirilebilir ve orijinal yeri varmış gibi kabul edilir  */
+/* postion: absolute -> kutu içinde left right bottom top şeklinde gezdirilebilir ve orijinal yeri yok olmuştur, atasına göre yerleşir  */
+/*https://www.youtube.com/watch?v=VvhvLK2gHjg  */
+
+ /* hover effecti ana tema*/
+.topMenuButtons {
+    width: 60%;
+    position: relative; /* psudo elementlerin yerleştirilmesi için temel (absolutelar buna bağlanır)*/
+    display: inline-block; /* metinin blok gibi davranamsını sağlar*/  
+    padding: 1.3rem 3rem;/* metin kenar arası boşluk */
+    font-size: 16px;
+
+    color: whitesmoke;
+    text-shadow: 0 0 2px #ffffff;
+  
+
+    background: linear-gradient(to bottom right,#76d1f6, #2c8eb5,#1a7295,#27679f);
+
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;/* mouse hoverda iken mouseun ikonunu değiştirir*/
+
+    overflow: hidden; /* psudo elementleri buttonun dışında görünmez yapar (önemli bu)*/
+    
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow:0 0 10px #000428 inset;
+  }
+  
+  /* hover effecti sol kenar*/
+  .topMenuButtons span::before {
+    content: ""; /* psudo elemanlar varsayılan olarak görünmezdir (bunun içine eleman koyarasn çubukla birlikte uzar) */ 
+    position: absolute;
+    bottom: 0;
+    left: 0;/* sol ve alta 0px yakın olacak(birleşir) şekild yerleşir   */
+    height: 0%;
+    width: 2.2px;
+    background-color:white;
+    transition: height 500ms ease-in-out; /* heightın %0dan %100e 0.5s sürer  */
+    
+  }
+   /* hover effecti sağ kenar*/
+  .topMenuButtons span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0%;
+    width: 2.2px;
+    background-color: white;
+    transition: height 0.5s ease-in-out;
+    
+  }
+   /* hover effecti alt kenar*/
+  .topMenuButtons::before { 
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transform: translateX(105%);/* çizgi başta solda oluşuyor ama kadrajdan çıkık oluyor o yüzden 105*/
+    transition: transform 0.5s ease-in-out;
+    
+  }
+   /* hover effecti üst kenar*/
+  .topMenuButtons::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transform: translateX(-105%);
+    transition: transform 0.5s ease-in-out;
+    
+  }
+  
+  .topMenuButtons:hover{
+    background: #00466e;
+    transition: background-color  0.6s;
+  }
+    /* hover effecti uygulandığında*/
+  .topMenuButtons:hover::after,
+  .topMenuButtons:hover::before {
+    transform: translateX(0);   /* 0 konumuna getiriyor*/
+  }
+    /* hover effecti uygulandığında*/
+  .topMenuButtons:hover span::before,
+  .topMenuButtons:hover span::after {
+    height: 100%;    /* heightı 100 yapıyo*/
+  }
+
+
+
+  /* Search bar ve input için temel stil */
+.dice{
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.5s ease-in-out;
+  filter:invert(1);
+  position: absolute;
+  cursor: pointer;
+  
+} 
+
+.dice:hover{
+  transform: rotateZ(90deg);
+}
+
+.diceButton{
+  background: none;
+  border: none;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  display: flex; 
+  align-items: center;
+  justify-content: center
+  
+}
+
+
+.search-bar {
+  width: 60%;   
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchInput {
+  width: 70%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #48abe0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(72, 171, 224, 0.5);
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.searchInput:focus {
+  border-color: #004e92;
+  box-shadow: 0 0 15px rgba(0, 78, 146, 0.7);
+}
+
+/* Search button: topMenuButtons özelliklerini temel alarak eklemeler */
+.topMenuButtons.searchButton {
+  width: auto; /* Buton genişliği içeriğe göre ayarlanır */
+  padding: 10px 20px; /* Daha küçük padding */
+  font-size: 16px; /* Yazı boyutu optimize edildi */
+  background-color: #2388b0; /* Özel renk */
+  color: white; /* Yazı rengi */
+  border: 2px solid #004e92; /* Butona kenarlık ekledik */
+  box-shadow: 0 0 15px rgba(0, 78, 146, 0.5); /* Hafif bir gölge */
+  margin-left: 0;
+}
+
+.topMenuButtons.searchButton:hover {
+  background-color: #003366; /* Hover rengi */
+  border-color: #003366; /* Hover anında kenarlık rengi */
+  transition: all 0.4s ease;
+}
+
+
+.dark-frame{
+  position: absolute;
+  top: 220px;
+  left: 0px;
+  width: 99.7%;
+  border-top: 7px solid rgba(255, 255, 255, 0.838);
+  border-style: double;
+  box-shadow: 0 0 30px 5px #48abe0;  
+
+}
+
+.foods-main-title{
+  width: 200px;
+  height: 60px;
+  background:#ffffff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 45px;
+  text-align: center;
+  margin: 0 auto; /* Ortalamak için */
+  padding-top: 120px; /* Yukarıdan boşluk ekler */
+  padding-bottom: 10px; 
+  text-shadow: 0 0 3px #ffffff, 0 0 7px #ffffff;
+cursor:default;
+}
+
+
+.foods-selection{
+  width: 60%;
+  height: 10px;
+  border: none;
+  padding: 40px;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;  
+  gap: 10px;
+}
+
+.topMenuButtons.foods-selection-button {
+  width: auto; /* Buton genişliği içeriğe göre ayarlanır */
+  padding: 10px 20px; /* Daha küçük padding */
+  font-size: 16px; /* Yazı boyutu optimize edildi */
+  color: white; /* Yazı rengi */
+  border: 2px solid #004e92; /* Butona kenarlık ekledik */
+  box-shadow: 0 0 15px rgba(0, 78, 146, 0.5); /* Hafif bir gölge */
+  cursor: pointer;
+  background: #2388b0;
+  position: relative;
+}
+
+.topMenuButtons.foods-selection-button:hover {
+  background-color: #003366; /* Hover rengi */
+  border-color: #003366; /* Hover anında kenarlık rengi */
+  transition: all 0.4s ease;
+}
+
+.topMenuButtons.active {
+  background-color: #003366 !important;
+  color:rgb(205, 205, 205);
+}
+
+.foods-list{
+  display: grid;
+  grid-template-columns: 420px 420px; 
+  gap: 100px; 
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  padding-bottom: 120px;
+  
+}
+
+.foods-item{
+  border: 3px solid #F5BD02;
+  border-radius: 10px;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  box-shadow: 0 0 50px 3px #e0dfdc; 
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.7));
+  color: #fff; /* Metin rengini okunabilir yapmak için */
+  cursor:pointer;
+  
+}
+
+.foods-item.hidden {
+  display: none; /* Gizlemek için kullanılacak sınıf */
+}
+
+.foods-image{
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  border-bottom: 2px solid salmon; 
+  box-shadow: 0 0 25px 2px salmon; 
+
+  
+}
+
+.foods-title{
+  font-family: 'Times New Roman', serif;
+  color: whitesmoke;
+}
+
+.foods-desp{
+  margin: 10px;
+  margin-bottom: 20px;
+  color: rgb(214, 214, 214);
+  font-family: Verdana, sans-serif;
+  font-size:medium;
+}
+
+.a-norm-for-temps{
+ 
+    text-decoration: none;
+  
+}
+
+/* GENEL TEMPLATE KISMI*/
+
+.template-image{
+  width: 840px;
+  height: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+  margin-top: 200px;
+  border: 2px solid #F5BD02;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 0 0 50px 10px salmon; 
+}
+
+.wrapper {
+  position: relative; 
+  width: 100%; 
+  height: 120px; 
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.template-title-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  mask: linear-gradient(to right, transparent, black 50%, transparent); 
+  
+  z-index: 1; 
+}
+
+
+.template-title {
+  position: absolute; 
+  font-size: 50px;
+  color: white;
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
+  text-align: center;
+  cursor: default;
+
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+} 
+
+
+.template-description {
+  font-family: Verdana, sans-serif;
+  font-size: large;
+  position: relative;
+  width: 80%;
+  margin: 20px auto 50px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); 
+  border-radius: 10px; 
+  color: rgb(214, 214, 214);
+  text-align: left;
+  
+  line-height: 1.8;
+  box-shadow: 0px 5px 50px salmon,0 0 5px 2px #F5BD02;
+  
+  
+}
+
+.template-back-arrow{
+  width:70px;
+  height: auto;
+  position: absolute;
+  left:110px;
+  top:110px;
+  transform: translate(-50%,-50%);
+  filter:invert(0.95) drop-shadow(0 0 5px white);
+ 
+}
+
+
+.food-template-chef-image{
+  width: 210px;
+  height: 150px;
+
+  border: 2px solid #F5BD02;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 2.5px;
+  border-bottom-left-radius: 2.5px;
+  box-shadow: 0 0 50px 10px salmon; 
+
+  position: absolute;
+
+  left: 82%;
+  top: 450px;
+
+
+  
+}
+
+.template-image-container{
+  position: relative;
+
+}
+
+
+.mini-wrapper {
+  position: relative; 
+  width: 100%; 
+  height: 70px; 
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+
+.mini-template-title-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  mask: linear-gradient(to right, transparent, black 50%, transparent); 
+  
+  z-index: 1; 
+}
+
+
+.mini-template-title {
+  position: absolute; 
+  font-size: 30px;
+  color: white;
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
+  text-align: left;
+  cursor: default;
+
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+} 
+
+.template-description-restorant{
+  text-align: center;
+}
+
+.template-description-sign-dish{
+  text-align: center;
+}
+
+.template-description-book{
+  text-align: center;
+}
+
+
+.template-map-container {
+  width: 210px;
+  height: 150px;
+
+  border: 2px solid #F5BD02;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 2.5px;
+  border-bottom-left-radius: 2.5px;
+  box-shadow: 0 0 50px 10px salmon; 
+
+  position: absolute;
+
+  left: 82%;
+  top: 450px;
+}
+
+.template-map {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/*CONTACT*/
+.contact-wrapper {
+  width: 90%;
+  margin: 100px auto;
+  padding: 40px;
+  background: linear-gradient(to bottom, #000428,#004e92);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(72, 171, 224, 0.6) ,  0 0 50px rgba(0, 0, 0, 0.6) inset;
+  
+}
+
+.contact-title-box {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-title {
+  font-size: 60px;
+  color: whitesmoke;
+  text-shadow: 0 0 5px #fff;
+}
+
+.contact-form-container {
+  width: 60%;
+  margin: 0 auto;
+  background: #003366;
+  padding: 20px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(18, 98, 168, 0.5);
+}
+
+.contact-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #48abe0;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+  resize: none;
+  
+}
+
+.contact-input:focus {
+  border-color: #004e92;
+  box-shadow: 0 0 15px rgba(0, 78, 146, 0.7);
+}
+
+.submit-button {
+  background: rgb(0, 78, 146);
+  color: #fff;
+  margin-top: 15px;
+  font-size: 18px;
+  padding: 15px;
+  border: solid 2px #48abe0;
+  box-shadow:0 0 15px rgb(1, 36, 67) inset ;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  color: whitesmoke;
+  text-shadow: 0 0 5px #fff;
+}
+
+.submit-button:hover {
+  background: #001a34;
+}
+
+.contact-info {
+  margin-top: 50px;
+  text-align: center;
+  
+}
+
+.contact-info-title {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: whitesmoke;
+  text-shadow: 0 0 5px #fff;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin: 5px 0;
+  color: whitesmoke;
+  text-shadow: 0 0 5px #fff;
+}
+
+
+
+#searchForm {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px; 
+  
+}
+
+
+.pre-contacts-button{
+  position: absolute;
+  top:90px;
+  left:1200px;
+  background: rgb(0, 78, 146);
+  color: #fff;
+  margin-top: 15px;
+  font-size: 18px;
+  padding: 15px;
+  border: solid 2px #1076ad;
+  box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.6), 0 0 15px rgb(1, 36, 67) inset;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 250px;
+  color: whitesmoke;
+  text-shadow: 0 0 5px #fff;
+}
+
+.pre-contacts-button:hover {
+  background: #001a34;
+}
+
+
+
+.contact_view_container {
+  background-color: rgba(0, 0, 0, 0.7); 
+  border: 1px solid #48abe0;   
+  border-radius: 8px;         
+  padding: 20px; 
+  width: 90%;
+  display: block;
+  margin: 50px auto;
+  
+  box-shadow: 0 0px 20px rgb(255, 255, 255); 
+}
+
+.contact_view_name {
+  font-size: 25px;       
+  font-family: 'Times New Roman', serif;   
+  font-weight: bold;      
+  color: whitesmoke;            
+  margin: 0;                
+}
+
+.contact_view_email {
+  font-size: 16px;          
+  color: rgb(250, 128, 114);          
+  margin: 5px 0;           
+}
+
+
+.contact_view_description {
+  font-size: 16px;        
+  color: rgba(255, 255, 255, 0.877);           
+  line-height: 1.6;        
+  margin-top: 10px;     
+  word-wrap: break-word;   
+  white-space: normal;     
+  overflow-wrap: break-word;   
+  font-family: Verdana, sans-serif;
+  font-size:medium; 
+  
+}
